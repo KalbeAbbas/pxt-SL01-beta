@@ -3,6 +3,10 @@ enum SI1145_ADDR {
     ADDR_0x60 = 0x60
 }
 
+/**
+ * SI1145 block
+ */
+//% weight=100 color=#081620 icon="\uf185" block="SL01"
 namespace SL01 {
     let SI1145_I2C_ADDR = SI1145_ADDR.ADDR_0x60
 
@@ -33,16 +37,14 @@ namespace SL01 {
         return pins.i2cReadNumber(SI1145_I2C_ADDR, NumberFormat.Int16LE);
     }
 
-    function writeParam(p: number, v: number)
-    {
+    function writeParam(p: number, v: number) {
         setreg(0x17, v)
         setreg(0x18, p | 0xA0)
 
         return getreg(0x2E);
     }
 
-    function reset(): void
-    {
+    function reset(): void {
         setreg(0x08, 0x00)
         setreg(0x09, 0x00)
         setreg(0x04, 0x00)
@@ -64,7 +66,7 @@ namespace SL01 {
     export function Begin(): boolean {
         let id: number = getreg(0x00)
 
-        if(id != 0x45)return false
+        if (id != 0x45) return false
 
         reset()
 
