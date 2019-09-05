@@ -76,6 +76,12 @@ namespace SL01 {
         setreg(0x15, 0x02);
         setreg(0x16, 0x00);
 
+        // enable UV sensor
+        writeParam(0x01, 0x80 | 0x20 | 0x10 | 0x01);
+        // enable interrupt on every sample
+        setreg(0x03, 0x01);
+        setreg(0x04, 0x01);
+
 
         /****************************** Prox Sense 1 */
         // program LED current
