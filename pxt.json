@@ -3,8 +3,7 @@
     "version": "0.0.7",
     "description": "XinaBox SL01 Light/UV/IR/Proximity sensor",
     "dependencies": {
-        "core": "*",
-        "radio": "*"
+        "core": "*"
     },
     "files": [
         "README.md",
@@ -13,7 +12,5 @@
     "testFiles": [
         "test.ts"
     ],
-    "public": true,
-    "preferredEditor": "tsprj",
-    "installedVersion": "workspace:346ea649-8562-46a2-8335-f7d38c568536"
+    "public": true
 }
